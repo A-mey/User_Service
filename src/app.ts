@@ -10,7 +10,7 @@ if (dotenvResult.error) {
 	throw dotenvResult.error;
 }
 // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-import { MailConsumer } from "./services/mailer/consumer.mailer";
+// import { MailConsumer } from "./services/mailer/consumer.mailer";
 
 const PORT = parseInt(process.env.PORT!, 10) || 4201;
 console.log(PORT);
