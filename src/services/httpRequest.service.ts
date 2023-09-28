@@ -33,6 +33,7 @@ class HttpRequestService {
 		try 
 		{
 			const httpResponse: AxiosResponse = await axios(config);
+			console.log(httpResponse, "httpResponse");
 			console.log(httpResponse.data);
 			res = httpResponse.data;
 		}

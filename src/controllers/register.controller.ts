@@ -29,6 +29,15 @@ class RegistrationController {
 		return response;
 	};
 
+	validateOtp = async(event: string, userData: unknown): Promise<response | undefined> => {
+		console.log("2");
+		const url = process.env[event]!;
+		const data = userData as object;
+		const response = await httpRequestService.postRequest(url, data);
+		console.log("response", response);
+		return response;
+	};
+
 
 
 }
