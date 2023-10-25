@@ -7,7 +7,9 @@
     "start": "tsc && node --unhandled-rejections=strict ./dist/src/app.js",
     "dev": "export DEPLOY_STAGE=development && tsc && node --unhandled-rejections=strict ./dist/src/app.js",
     "debug": "export DEBUG=* && npm run start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-boilerplate": "export DEPLOY_STAGE=development && concurrently -k \"tsc -p ./ -w\" \"nodemon ./dist/app.js\"",
+    "watch": "export DEPLOY_STAGE=development && ts-node-dev --respawn src/app.ts"
   },
   "author": "Ameya",
   "license": "ISC",
@@ -28,11 +30,13 @@
   },
   "dependencies": {
     "axios": "^1.5.0",
+    "concurrently": "^8.2.1",
     "cors": "^2.8.5",
     "debug": "^4.3.4",
     "dotenv": "^16.3.1",
     "nodemailer": "^6.9.4",
     "socket.io": "^4.7.2",
+    "ts-node-dev": "^2.0.0",
     "winston": "^3.10.0"
   }
 }

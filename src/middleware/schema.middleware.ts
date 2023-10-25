@@ -81,7 +81,20 @@ class SchemaMiddleware {
                     "type": "string",
                 }
             },
-        }
+        },
+
+        "EventVerifySessionId": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["SESSIONID"],
+            "properties" : {
+                "SESSIONID": {
+                    "type": "string",
+                    "minlength": 11,
+                    "maxlength": 11
+                }
+            },
+        },  
     }
 }
 

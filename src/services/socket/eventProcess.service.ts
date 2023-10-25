@@ -3,6 +3,7 @@ import registerController from "../../controllers/register.controller";
 import { Socket } from "socket.io";
 import Validation from "../../middleware/validation.middleware"
 import { events } from "../../enums/events.enum";
+import { response } from "../../types/response.type";
 
 class ProcessEvent {
 	process = async(socket: Socket, event: string, message: unknown) => {
@@ -30,6 +31,11 @@ class ProcessEvent {
 					console.log("1");
 					response = await registerController.validateOtp(event, message);
 					break;
+				case "EventGetSessionId":
+					response = await registerController.getSessionId(event);
+					break;
+				case "EventVerifySessionId":
+					response = await registerController.verifySessionId(event, message);
 			}
 		} else {
 			response.code = 400;

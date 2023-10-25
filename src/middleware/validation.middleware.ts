@@ -2,6 +2,7 @@ import schemaMiddleware from "./schema.middleware";
 import compileSchema from "../services/schema/compile.schema";
 import errorSchema from "../services/schema/error.schema";
 import ValidateSchema from "../services/schema/validate.schema";
+import { errorMessageObject } from "../types/error.types";
 
 class Validation {
     validate = async(event: string, object: unknown): Promise<errorMessageObject> => {

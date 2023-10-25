@@ -1,5 +1,6 @@
 import getErrorServices from "./error.schema";
 import { ErrorObject, ValidateFunction } from "ajv";
+import { errorMessageObject } from "../../types/error.types";
 
 class ValidateSchema {
     validateSchema = (async(obj: object, schema: ValidateFunction<unknown>) => {
