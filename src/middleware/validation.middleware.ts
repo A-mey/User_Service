@@ -12,6 +12,8 @@ class Validation {
         if (schema) {
             const validateSchemaFn = await compileSchema.compile(schema);
             errorRes =  await ValidateSchema.validateSchema(object as object, validateSchemaFn);
+        } else {
+            errorRes.isValid = true;
         }
         return errorRes;
     }

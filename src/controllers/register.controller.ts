@@ -1,4 +1,4 @@
-import httpRequestService from "../services/httpRequest.service";
+import httpRequestService from "../services/http/http.services";
 import compileSchema from "../services/schema/compile.schema";
 import { response } from "../types/response.type";
 

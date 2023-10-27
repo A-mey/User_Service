@@ -90,8 +90,8 @@ class SchemaMiddleware {
             "properties" : {
                 "SESSIONID": {
                     "type": "string",
-                    "minlength": 11,
-                    "maxlength": 11
+                    "minLength": 11,
+                    "maxLength": 11
                 }
             },
         },  
