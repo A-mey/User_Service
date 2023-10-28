@@ -1,6 +1,6 @@
 import { Consumer, EachMessagePayload } from "kafkajs";
 import { KafkaJSClass } from "./kafka.config";
-import { SimpleConsumer } from "../../interfaces/SimpleConsumer.interfaces";
+import { SimpleConsumer } from "../../../interfaces/SimpleConsumer.interfaces";
 
 export abstract class KafkaConsumer extends KafkaJSClass implements SimpleConsumer {
 	protected readonly consumer: Consumer = this.kafka.consumer({ groupId: process.env.GROUPID! });

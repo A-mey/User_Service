@@ -1,10 +1,11 @@
 import { ErrorObject } from "ajv";
-import { catchError } from "../../helpers/catchError.helper";
+import { catchError } from "../../../helpers/catchError.helper";
 
 class SchemaError {
     constructor() {}
 
     getError = async (error: ErrorObject) => {
+        console.log(error, "error");
         let err: string = "";
         try {
             switch(error.keyword) {

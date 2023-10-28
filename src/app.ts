@@ -3,7 +3,7 @@ import { createServer } from "http";
 // import { Server } from "socket.io";
 
 
-import { ConnectSocketService } from "./services/socket/connect.service";
+import { ConnectSocketService } from "./common/services/socket/connect.service";
 import * as dotenv from "dotenv";
 const dotenvResult = dotenv.config({ path: `.env.${process.env.DEPLOY_STAGE}` });
 if (dotenvResult.error) {

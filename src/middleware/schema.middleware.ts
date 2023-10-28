@@ -71,17 +71,30 @@ class SchemaMiddleware {
         "EventLogin": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["EMAILID", "PASSWORD"],
+            "required": ["SESSIONID", "LOGINDATA"],
             "properties" : {
-                "EMAILID": {
+                "SESSIONID": {
                     "type": "string",
-                    "format": "email"
+                    // "minLength": 11,
+                    // "maxLength": 11
                 },
-                "PASSWORD": {
-                    "type": "string",
+                "LOGINDATA": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["EMAILID", "PASSWORD"],
+                    "properties" : {
+                        "EMAILID": {
+                            "type": "string",
+                            "format": "email"
+                        },
+                        "PASSWORD": {
+                            "type": "string",
+                        }
+                    },
                 }
             },
         },
+
 
         "EventVerifySessionId": {
             "type": "object",
@@ -90,8 +103,8 @@ class SchemaMiddleware {
             "properties" : {
                 "SESSIONID": {
                     "type": "string",
-                    "minLength": 11,
-                    "maxLength": 11
+                    // "minLength": 11,
+                    // "maxLength": 11
                 }
             },
         },  

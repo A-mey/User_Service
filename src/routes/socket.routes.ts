@@ -1,15 +1,16 @@
-import { catchError } from "../../helpers/catchError.helper";
-import registerController from "../../controllers/register.controller";
+import { catchError } from "../helpers/catchError.helper";
+import registerController from "../controllers/login.controller";
 import { Socket } from "socket.io";
-import Validation from "../../middleware/validation.middleware"
-import { events } from "../../enums/events.enum";
-import { response } from "../../types/response.type";
+import Validation from "../middleware/validation.middleware"
+import { events } from "../enums/events.enum";
+import { response } from "../types/response.type";
 
-class ProcessEvent {
+class SocketRoutes {
 	process = async(socket: Socket, event: string, message: unknown) => {
 		const eventKey: (keyof typeof events) = event as (keyof typeof events);
 		let response: response | undefined = {success: false, code: 500, data: {message: "Something went wrong"}};
 		const checkResponse = await Validation.validate(event, message);
+		console.log(checkResponse, "checkResponse");
 		if (checkResponse.isValid) {
 			switch(eventKey) {
 				case "disconnect":
@@ -50,4 +51,4 @@ class ProcessEvent {
 	};
 }
 
-export default new ProcessEvent();
+export default new SocketRoutes();

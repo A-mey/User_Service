@@ -1,8 +1,8 @@
 import * as http from "http";
 import { SocketService } from "./socket.service";
 // import {events} from "./events.service";
-import {events} from "../../enums/events.enum"
-import ProcessEvent from "./eventProcess.service";
+import {events} from "../../../enums/events.enum"
+import ProcessEvent from "../../../routes/socket.routes";
 import { Socket } from "socket.io";
 
 export class ConnectSocketService extends SocketService {

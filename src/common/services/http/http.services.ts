@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse} from "axios";
-import { catchError } from "../../helpers/catchError.helper";
-import { response } from "../../types/response.type";
+import { catchError } from "../../../helpers/catchError.helper";
+import { response } from "../../../types/response.type";
 import CommonHttpService from "./common.http.service";
 
 class HttpRequestService {
