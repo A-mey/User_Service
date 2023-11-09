@@ -32,7 +32,9 @@ console.log(PORT);
 
 
 
-const httpServer = createServer();
+const httpServer = createServer((req, res) => {
+	res.setHeader("Access-Control-Allow-Headers", "Authorization");
+});
 
 // const io = new Server(httpServer, {
 // 	cors: {origin : "/*"}
